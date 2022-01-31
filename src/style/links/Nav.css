@@ -1,0 +1,18 @@
+nav a.active{
+    
+    border-bottom: 1px solid #FF6060;
+}
+
+nav {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 560px){
+    nav{
+        width: 190px;
+        justify-content: center;
+    }
+}
