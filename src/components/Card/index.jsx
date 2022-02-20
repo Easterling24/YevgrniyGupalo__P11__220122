@@ -31,10 +31,14 @@ border-radius: 10px;
 `
 
 const CardTitle = styled.h3`
-width: 80%;
+width: 100%;
+height: 100%;
 position:absolute;
-left: 5%;
 font-weight: 600;	
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+padding: 0 0 40px 20px;
 `;
 
 function AppartmentCard({ title, cover}) {

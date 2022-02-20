@@ -12,19 +12,20 @@ import ApartmentData from '../../data/logements.json';
 const DetailedWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: flex-start;
 	align-items: center;
 	font-family: 'Montserrat', sans-serif;
 	margin-bottom: 2rem;
 	color: #ff6060;
+	min-height: 80vh;
 	padding: 0 1rem;
-	min-height: 75vh;
 `;
 
 const DetailedCardInfoWrapper = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
+	margin-top: 1rem;
 	justify-content: space-between;
 `;
 
@@ -35,6 +36,13 @@ const DetailedCardLocationTags = styled.div`
 
 	> h1 {
 		margin: 0;
+		font-size: 35px;
+		font-weight: 600;
+	}
+
+	> p {
+		font-size: 18px;
+		font-weight: 600;
 	}
 	@media (max-width: 560px) {
 		width: 100%;
@@ -48,6 +56,7 @@ const DetailedCardLocationTags = styled.div`
 const DetailedTagContainer = styled.div`
 	display: flex;
 	flex-wrap: wrap;
+	margin: 1rem 0;
 
 	> p {
 		padding: 5px 15px;
@@ -102,12 +111,12 @@ const DetailedCollapseContainer = styled.div`
 	display: flex;
 	width: 100%;
 	justify-content: space-between;
-	margin-top: 2rem;
-	margin-bottom: 2rem;
+	margin-top: 1rem;
 
 	@media (max-width: 560px) {
 		flex-direction: column;
 		align-items: center;
+		margin-top: 2rem;
 	}
 `;
 
@@ -115,21 +124,23 @@ const DetailedCollapseContainer = styled.div`
 
 const DescriptionWrapper = styled.div`
 	width: 550px;
-	height: ${(props) => (props.expanded ? '180px' : '1rem')};
+	height: ${(props) => (props.expanded ? '200px' : '2rem')};
+	transition: all 300ms ease-in-out;
 	@media (max-width: 560px) {
 		width: 100%;
-		margin-bottom: 2rem;
-		height: ${(props) => (props.expanded ? '120px' : '1rem')};
+		margin-bottom: ${(props) => (props.expanded ? '1rem' : '2rem;')}
+		height: ${(props) => (props.expanded ? '50px' : '1rem')};
 	}
 `;
 
 const EquipmentWrapper = styled.div`
 	width: 550px;
-	height: ${(props) => (props.expanded ? '270px' : '1rem')};
+	height: ${(props) => (props.expanded ? '200px' : '2rem')};
+	transition: all 300ms ease-in-out;
 	@media (max-width: 560px) {
 		width: 100%;
-		height: 30px;
-		height: ${(props) => (props.expanded ? '160px' : '1rem')};
+		height: ${(props) => (props.expanded ? '180px' : '2rem')};
+		margin-bottom: ${(props) => (props.expanded ? '3rem' : '2rem;')}
 	
 `;
 
@@ -187,7 +198,7 @@ const EquipmentContainer = styled.div`
 const DescriptionExpanded = styled.div`
 	position: absolute;
 	display: block;
-	top: 87%;
+	top: 100%;
 	left: 0;
 	right: 0;
 	background: #f6f6f6;
@@ -199,7 +210,7 @@ const DescriptionExpanded = styled.div`
 	font-weight: 600;
 	font-size: 18px;
 	transform-origin: top;
-	animation: ${collapseMove} 600ms 0ms both;
+	animation: ${collapseMove} 800ms 0ms both;
 	z-index: -999;
 
 	@media (max-width: 560px) {
@@ -213,40 +224,33 @@ const EquipmentExpanded = styled.div`
 	background: #f6f6f6;
 	color: #ff6060;
 	position: absolute;
-	display: block;
-	top: 87%;
+	display: flex;
+	padding: 20px;
+	top: 100%;
 	left: 0;
 	right: 0;
-	padding: 5px;
 	border-radius: 0 0 10px 10px;
-	animation: ${collapseMove} 600ms 0ms both;
+	animation: ${collapseMove} 800ms 0ms both;
 	z-index: -999;
 	> p {
 		font-weight: 600;
 		font-size: 18px;
-		margin: 10px 0px;
 	}
 
 	@media (max-width: 560px) {
 		p {
 			font-size: 12px;
-			margin: 0.5rem 0;
 		}
 	}
 `;
 
 function DetailedPage() {
 	const { id } = useParams();
-	let matchedId;
 
-	ApartmentData.logements.forEach((item) => {
-		if (item.id === id) {
-			matchedId = item;
-		}
-	});
+	let appartment = ApartmentData.logements.find((appart) => appart.id === id);
 
-	const [ description, setDescription ] = useState(matchedId.description);
-	const [ equipment, setEquipment ] = useState(matchedId.equipments);
+	const [ description, setDescription ] = useState(appartment.description);
+	const [ equipment, setEquipment ] = useState(appartment.equipments);
 	const [ expandDescription, setExpandDescription ] = useState(false);
 	const [ expandEquipment, setExpandEquipment ] = useState(false);
 
@@ -282,25 +286,25 @@ function DetailedPage() {
 		<DetailedWrapper>
 			{/* Picture Gallery and Navigation */}
 
-			<Gallery props={matchedId} />
+			<Gallery props={appartment} />
 
 			{/* Ttile and Host Data */}
 			<DetailedCardInfoWrapper>
 				<DetailedCardLocationTags>
-					<h1>{matchedId.title}</h1>
-					<p>{matchedId.location}</p>
+					<h1>{appartment.title}</h1>
+					<p>{appartment.location}</p>
 
-					<DetailedTagContainer>{matchedId.tags.map((tag) => <p key={tag}>{tag}</p>)}</DetailedTagContainer>
+					<DetailedTagContainer>{appartment.tags.map((tag) => <p key={tag}>{tag}</p>)}</DetailedTagContainer>
 				</DetailedCardLocationTags>
 
 				<DetailedHostRating>
 					<HostContainer>
-						<h3>{matchedId.host.name}</h3>
+						<h3>{appartment.host.name}</h3>
 						<HostContainerPicture>
-							<img src={matchedId.host.picture} alt={matchedId.host.name} />
+							<img src={appartment.host.picture} alt={appartment.host.name} />
 						</HostContainerPicture>
 					</HostContainer>
-					<Rating value={matchedId.rating} color={'#ff6060'} />
+					<Rating value={appartment.rating} color={'#ff6060'} />
 				</DetailedHostRating>
 			</DetailedCardInfoWrapper>
 

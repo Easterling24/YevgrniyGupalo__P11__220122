@@ -26,7 +26,7 @@ const NavigationArrows = styled.div`
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	display: flex;
+	display: ${(props) => (props.length === 1 ? 'none' : 'flex')};
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 1rem;
@@ -64,18 +64,14 @@ const GalleryCounter = styled.p`
 
 function Gallery({ props }) {
 	const [ gallery ] = useState(props.pictures);
-
-	// let current = gallery[0];
-	// let currentIndex = gallery.indexOf(current);
-
 	const [ index, setIndex ] = useState({
 		i: 0
 	});
 
+	console.log(gallery.length);
+
 	const moveToNext = () => {
 		setIndex({ i: (index.i + 1) % gallery.length });
-
-		console.log(index.i);
 	};
 
 	const moveToPrevious = () => {
@@ -84,8 +80,6 @@ function Gallery({ props }) {
 		}
 
 		setIndex({ i: index.i - 1 });
-
-		console.log(index.i);
 	};
 
 	return (
@@ -93,7 +87,7 @@ function Gallery({ props }) {
 			{gallery ? <GalleryImage src={gallery[index.i]} /> : null}
 
 			{gallery.length > 0 ? (
-				<NavigationArrows>
+				<NavigationArrows length={gallery.length}>
 					<i onClick={() => moveToPrevious()} className="fas fa-chevron-left" />
 					<i onClick={() => moveToNext()} className="fas fa-chevron-right" />
 					<GalleryCounter> /</GalleryCounter>

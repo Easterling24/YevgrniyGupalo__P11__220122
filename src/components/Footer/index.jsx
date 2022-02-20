@@ -9,8 +9,7 @@ const FooterWrapper = styled.footer`
 	align-items: center;
 	background-color: black;
 	color: #fff;
-	height: 209px;
-	padding-top: 1rem;
+	padding:20px;
 
 	@media (max-width: 560px) {
 		padding: 40px;
@@ -28,6 +27,7 @@ const CopyRight = styled.p`
 const LogoContainer = styled.div`
 	width: 122px;
 	height: 40px;
+	margin-bottom:1rem;
 	@media (max-width:560px) {
 		height: 30px;
 		width: 150px;

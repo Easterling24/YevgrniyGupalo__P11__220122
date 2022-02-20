@@ -4,6 +4,7 @@ import AppartmentCard from '../../components/Card';
 import styled from 'styled-components';
 import { NavLink as Link } from 'react-router-dom';
 import backgroundImg from '../../assets/mainbg.png';
+
 const HomeWrapper = styled.div`
 	display: flex;
 	flex-direction: column;

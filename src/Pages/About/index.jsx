@@ -13,14 +13,18 @@ const AboutWrapper = styled.div`
 	font-family: 'Montserrat', sans-serif;
 	color: #ff6060;
 	padding: 0 1rem;
-	min-height: 75vh;
+	
+	
+	@media (max-width: 560px){
+		
+	
+	}
 `;
 
 const PageImage = styled.div`
 	width: 100%;
 	height: 223px;
 	border-radius: 25px;
-	margin-bottom: 4rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -47,10 +51,12 @@ const collapseMove = keyframes`
 
 const CollapseWrapper = styled.div`
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+	flex-direction: column;npm 
+	align-items: flex-start;
+	height:120vh;
 	width: 70%;
-	margin-bottom:20%;
+	margin: 2rem 0 0 0;
+
 
 	@media (max-width: 560px){
 		width: 100%;
@@ -60,36 +66,36 @@ const CollapseWrapper = styled.div`
 const FirstCollapseWrapper = styled.div`
 	width: 100%;
 	height: ${(props) => (props.expanded ? '150px' : '47px')};
-	margin-bottom: 1rem;
+	margin-bottom: 2rem;
 	@media (max-width: 560px){
-		height: ${(props) => (props.expanded ? '240px' : '47px')};
+		height: ${(props) => (props.expanded ? '200px' : '47px')};
 	}
 `;
 
 const SecondCollapseWrapper = styled.div`
 	width: 100%;
 	height: ${(props) => (props.expanded ? '150px' : '47px')};
-	margin-bottom: 1rem;
+	margin-bottom: 2rem;
 	@media (max-width: 560px){
-		height: ${(props) => (props.expanded ? '220px' : '47px')};
+		height: ${(props) => (props.expanded ? '200px' : '47px')};
 	}
 `;
 
 const ThirdCollapseWrapper = styled.div`
 	width: 100%;
 	height: ${(props) => (props.expanded ? '150px' : '47px')};
-	margin-bottom: 1rem;
+	margin-bottom: 2rem;
 	@media (max-width: 560px){
-		height: ${(props) => (props.expanded ? '220px' : '47px')};
+		height: ${(props) => (props.expanded ? '200px' : '47px')};
 	}
 `;
 
 const FourthCollapseWrapper = styled.div`
 	width: 100%;
-	height: ${(props) => (props.expanded ? '150px' : '47px')};
-	margin-bottom: 1rem;
+	height: ${(props) => (props.expanded ? '200px' : '47px')};
+	margin-bottom: 2rem;
 	@media (max-width: 560px){
-		height: ${(props) => (props.expanded ? '220px' : '47px')};
+		height: ${(props) => (props.expanded ? '290px' : '47px')};
 	}
 `;
 
@@ -111,7 +117,7 @@ const FirstCollapseContent = styled.div`
 	width: 100%;
 	background: #f6f6f6;
 	color: #ff6060;
-	top: 87%;
+	top: 100%;
 	left: 0;
 	right: 0;
 	position: absolute;
@@ -140,7 +146,7 @@ const SecondCollapseContent = styled.div`
 	width: 100%;
 	background: #f6f6f6;
 	color: #ff6060;
-	top: 87%;
+	top: 100%;
 	left: 0;
 	right: 0;
 	position: absolute;
@@ -168,7 +174,7 @@ const ThirdCollapseContent = styled.div`
 	width: 100%;
 	background: #f6f6f6;
 	color: #ff6060;
-	top: 87%;
+	top: 100%;
 	left: 0;
 	right: 0;
 	position: absolute;
@@ -196,7 +202,7 @@ const FourthCollapseContent = styled.div`
 	width: 100%;
 	background: #f6f6f6;
 	color: #ff6060;
-	top: 87%;
+	top: 100%;
 	left: 0;
 	right: 0;
 	position: absolute;

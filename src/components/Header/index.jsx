@@ -5,7 +5,6 @@ import KasaLogo from '../../assets/kasa.svg';
 import '../../style/links/Nav.css';
 
 const NavContainer = styled.header`
-	padding-top: 10px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -47,7 +46,7 @@ function Header() {
 				<HomeLogo src={KasaLogo} />
 			</Link>
 			<nav>
-				<StyledLink to="/">Accueil</StyledLink>
+				<StyledLink  to="/">Accueil</StyledLink>
 				<StyledLink to="/about">A propos</StyledLink>
 			</nav>
 		</NavContainer>
