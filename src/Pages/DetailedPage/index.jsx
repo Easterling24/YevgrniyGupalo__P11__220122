@@ -123,7 +123,7 @@ const DetailedCollapseContainer = styled.div`
 // Collapsible menu with animation
 
 const DescriptionWrapper = styled.div`
-	width: 550px;
+	width:100%;
 	height: ${(props) => (props.expanded ? '200px' : '2rem')};
 	transition: all 300ms ease-in-out;
 	@media (max-width: 560px) {
@@ -134,7 +134,7 @@ const DescriptionWrapper = styled.div`
 `;
 
 const EquipmentWrapper = styled.div`
-	width: 550px;
+width:100%
 	height: ${(props) => (props.expanded ? '200px' : '2rem')};
 	transition: all 300ms ease-in-out;
 	@media (max-width: 560px) {
@@ -197,7 +197,6 @@ const EquipmentContainer = styled.div`
 
 const DescriptionExpanded = styled.div`
 	position: absolute;
-	display: block;
 	top: 100%;
 	left: 0;
 	right: 0;
@@ -205,11 +204,10 @@ const DescriptionExpanded = styled.div`
 	color: #ff6060;
 	border-radius: 0 0 10px 10px;
 	padding: 20px;
-	opacity: 1;
-	z-index: 1;
 	font-weight: 600;
 	font-size: 18px;
 	transform-origin: top;
+	overflow: hidden;
 	animation: ${collapseMove} 800ms 0ms both;
 	z-index: -999;
 
@@ -219,17 +217,16 @@ const DescriptionExpanded = styled.div`
 `;
 
 const EquipmentExpanded = styled.div`
-	display: flex;
 	flex-direction: column;
 	background: #f6f6f6;
 	color: #ff6060;
 	position: absolute;
-	display: flex;
 	padding: 20px;
 	top: 100%;
 	left: 0;
 	right: 0;
 	border-radius: 0 0 10px 10px;
+	overflow: hidden;
 	animation: ${collapseMove} 800ms 0ms both;
 	z-index: -999;
 	> p {

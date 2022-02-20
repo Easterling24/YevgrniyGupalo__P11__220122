@@ -11,6 +11,7 @@ const NavContainer = styled.header`
 	font-family: 'Montserrat', sans-serif;
 
 	@media (max-width: 560px) {
+		padding: 0 0.5rem;
 	}
 `;
 
@@ -31,7 +32,7 @@ font-weight: 600;
 @media (max-width: 560px) {
 
 	font-size:15px;
-	margin: 0 1rem;
+
 
 	
 
