@@ -53,13 +53,14 @@ const CollapseWrapper = styled.div`
 	display: flex;
 	flex-direction: column;npm 
 	align-items: flex-start;
-	height:120vh;
+	height:${props => props.expanded ? "80vh": "60vh"};
 	width: 70%;
 	margin: 2rem 0 0 0;
 
 
 	@media (max-width: 560px){
 		width: 100%;
+		height:${props => props.expanded ? "120vh": "50vh"};
 	}
 `;
 
@@ -95,7 +96,7 @@ const FourthCollapseWrapper = styled.div`
 	height: ${(props) => (props.expanded ? '200px' : '47px')};
 	margin-bottom: 2rem;
 	@media (max-width: 560px){
-		height: ${(props) => (props.expanded ? '290px' : '47px')};
+		height: ${(props) => (props.expanded ? '300px' : '47px')};
 	}
 `;
 
@@ -293,7 +294,7 @@ function About() {
 			<PageImage />
 			{/* Wrapper Containing Collapsible Menus */}
 
-			<CollapseWrapper>
+			<CollapseWrapper expanded={expandResponsability || expandReliability || expandRespect || expandService}>
 				<FirstCollapseWrapper expanded={expandReliability}>
 					<FirstCollapse onClick={() => handleReliability()}>
 						<p>Fiabilité</p>

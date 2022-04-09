@@ -123,18 +123,18 @@ const DetailedCollapseContainer = styled.div`
 // Collapsible menu with animation
 
 const DescriptionWrapper = styled.div`
-	width:100%;
+	width:500px;
 	height: ${(props) => (props.expanded ? '200px' : '2rem')};
 	transition: all 300ms ease-in-out;
 	@media (max-width: 560px) {
 		width: 100%;
-		margin-bottom: ${(props) => (props.expanded ? '1rem' : '2rem;')}
-		height: ${(props) => (props.expanded ? '50px' : '1rem')};
+		margin-bottom: ${(props) => (props.expanded ? '2rem' : '2rem;')}
+		height: ${(props) => (props.expanded ? '80px' : '2rem')};
 	}
 `;
 
 const EquipmentWrapper = styled.div`
-width:100%
+	width:500px;
 	height: ${(props) => (props.expanded ? '200px' : '2rem')};
 	transition: all 300ms ease-in-out;
 	@media (max-width: 560px) {
@@ -160,7 +160,7 @@ const DescriptionContainer = styled.div`
 	padding: 0 15px;
 	@media (max-width: 560px) {
 		width: 100%;
-		height: 30px;
+		height: 50px;
 	}
 `;
 
@@ -168,8 +168,13 @@ const DescriptionContainer = styled.div`
 
 const collapseMove = keyframes`
 
-0%{transform: translateY(-50px)};
-100%{transform: translateY(0px)};
+	from { transform: translateY(-50px)
+
+	}
+	to {
+		transform: translateY(0px)
+	}
+
 
 `;
 
@@ -189,7 +194,8 @@ const EquipmentContainer = styled.div`
 
 	@media (max-width: 560px) {
 		width: 100%;
-		height: 30px;
+		height: 50px;
+		margin-bottom: 5rem;
 	}
 `;
 
@@ -197,22 +203,24 @@ const EquipmentContainer = styled.div`
 
 const DescriptionExpanded = styled.div`
 	position: absolute;
-	top: 100%;
+	top: 90%;
 	left: 0;
 	right: 0;
 	background: #f6f6f6;
 	color: #ff6060;
-	border-radius: 0 0 10px 10px;
 	padding: 20px;
 	font-weight: 600;
-	font-size: 18px;
 	transform-origin: top;
+	border-radius: 0 0 10px 10px;
 	overflow: hidden;
-	animation: ${collapseMove} 800ms 0ms both;
+	animation: ${collapseMove} 1.2s 0ms ease;
+	transition: all 0.3s ease;
 	z-index: -999;
 
 	@media (max-width: 560px) {
-		font-size: 12px;
+		font-size: 15px;
+		top: 100%;
+		
 	}
 `;
 
@@ -222,21 +230,22 @@ const EquipmentExpanded = styled.div`
 	color: #ff6060;
 	position: absolute;
 	padding: 20px;
-	top: 100%;
+	top: 90%;
 	left: 0;
 	right: 0;
 	border-radius: 0 0 10px 10px;
 	overflow: hidden;
-	animation: ${collapseMove} 800ms 0ms both;
+	animation: ${collapseMove} 1.2s 0ms ease;
 	z-index: -999;
 	> p {
 		font-weight: 600;
-		font-size: 18px;
+		
 	}
 
 	@media (max-width: 560px) {
 		p {
-			font-size: 12px;
+			font-size: 15px;
+			
 		}
 	}
 `;

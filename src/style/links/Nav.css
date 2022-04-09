@@ -4,15 +4,21 @@ nav a.active{
 }
 
 nav {
-    width: 250px;
+ 
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+ul{
+    padding-right: 1rem;
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
 @media screen and (max-width: 560px){
     nav{
-        width: 190px;   
         justify-content: space-evenly;
     }
 }

@@ -68,8 +68,6 @@ function Gallery({ props }) {
 		i: 0
 	});
 
-	console.log(gallery.length);
-
 	const moveToNext = () => {
 		setIndex({ i: (index.i + 1) % gallery.length });
 	};

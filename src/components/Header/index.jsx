@@ -11,7 +11,7 @@ const NavContainer = styled.header`
 	font-family: 'Montserrat', sans-serif;
 
 	@media (max-width: 560px) {
-		padding: 0 0.5rem;
+		
 	}
 `;
 
@@ -46,10 +46,10 @@ function Header() {
 			<Link to="/">
 				<HomeLogo src={KasaLogo} />
 			</Link>
-			<nav>
+			<ul>
 				<StyledLink  to="/">Accueil</StyledLink>
 				<StyledLink to="/about">A propos</StyledLink>
-			</nav>
+			</ul>
 		</NavContainer>
 	);
 }
