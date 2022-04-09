@@ -10,15 +10,19 @@ nav {
     align-items: center;
 }
 
-ul{
+nav{
     padding-right: 1rem;
-    width: 150px;
+    width: 300px;
     display: flex;
     justify-content: space-between;
 }
 
 @media screen and (max-width: 560px){
     nav{
-        justify-content: space-evenly;
+        padding-right: 1rem;
+        width: 150px;
+        display: flex;
+        justify-content: space-between;
+
     }
 }

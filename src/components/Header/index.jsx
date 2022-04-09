@@ -46,10 +46,10 @@ function Header() {
 			<Link to="/">
 				<HomeLogo src={KasaLogo} />
 			</Link>
-			<ul>
+			<nav>
 				<StyledLink  to="/">Accueil</StyledLink>
 				<StyledLink to="/about">A propos</StyledLink>
-			</ul>
+			</nav>
 		</NavContainer>
 	);
 }
