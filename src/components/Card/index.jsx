@@ -12,7 +12,8 @@ const CardWrapper = styled.div`
 	display: flex;
 	justify-content: flex-end;
 	flex-direction: column;
-	background: #ff6060
+
+	position:relative;
 
 	color: #fff;
 	transition: 200ms;
@@ -25,14 +26,18 @@ const CardWrapper = styled.div`
 
 const PlaceCover = styled.img`
 object-fit:cover;
+opacity: 0.8;
 width: 100%;
 height: 100%;
 border-radius: 10px;
+background: rgba(0,0,0,0.4);
 `
 
 const CardTitle = styled.h3`
 width: 100%;
 height: 100%;
+font-size: 20px;
+
 position:absolute;
 font-weight: 600;	
 display:flex;
@@ -44,8 +49,9 @@ padding: 0 0 40px 20px;
 function AppartmentCard({ title, cover}) {
 	return (
 		<CardWrapper>
-			<CardTitle>{title}</CardTitle>
+
 			<PlaceCover src={cover} alt={title} />
+			<CardTitle>{title}</CardTitle>
 		</CardWrapper>
 	);
 }
