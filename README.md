@@ -2,7 +2,7 @@
 
 ## Build a React App using React Router 
 
-[!Screenshot](screen.jpg)
+![Screenshot](screen.jpg)
 
 ## Installation
 * Start Git Bash
