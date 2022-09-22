@@ -10,40 +10,34 @@ const ErrorWrapper = styled.div`
 	flex-direction: column;
 	align-items: center;
 	color: #f7694a;
-	margin-bottom:2rem;
+	margin-bottom: 2rem;
 	min-height: 70vh;
 `;
 
-const WrapperErrorMessage = styled.div
-`
-display:flex;
-flex-direction:column;
-align-items:center;
-
-`
+const WrapperErrorMessage = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+`;
 
 const Error404 = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 5rem;
 
-display:flex;
-justify-content: center;
-align-items:center;
-margin-bottom: 5rem;
-
-@media (max-width: 560px){
-	> img{
-		width: 300px;
+	@media (max-width: 560px) {
+		> img {
+			width: 300px;
+		}
 	}
-}
-
-
-
 `;
 
 const ErrorImg = styled.img``;
 
 const ErrorMsg = styled.h1`
-width: 100%;
-text-align:center;
+	width: 100%;
+	text-align: center;
 `;
 
 const BackToHome = styled(Link)`

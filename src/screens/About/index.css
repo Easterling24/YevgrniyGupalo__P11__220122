@@ -1,0 +1,37 @@
+.about-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: 'Montserrat', sans-serif;
+	color: #ff6060;
+	padding: 0 1rem;
+	min-height: 80vh;
+}
+
+.collapsers-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 3rem;
+	width: 100%;
+}
+
+.page-image {
+	width: 100%;
+	height: 223px;
+	border-radius: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 48px;
+	line-height: 142.6%;
+	color: #fff;
+	position: relative;
+	mix-blend-mode: darken;
+	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../assets/backgroundAbout.png");
+	background-repeat: no-repeat;
+}

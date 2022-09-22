@@ -6,15 +6,13 @@ const CardWrapper = styled.div`
 
 	margin: 2rem 0;
 	height: 340px;
-	width: 340px;
+	width:100%;
 	border-radius: 10px;
 	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
 	display: flex;
 	justify-content: flex-end;
 	flex-direction: column;
-
 	position:relative;
-
 	color: #fff;
 	transition: 200ms;
 	&:hover {

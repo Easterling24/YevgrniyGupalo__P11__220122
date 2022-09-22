@@ -1,0 +1,19 @@
+.carousel-btn {
+	background: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	width: 45px;
+	height: 78px;
+	transition: all 300ms ease-in-out;
+}
+
+.carousel-btn i {
+	font-size: 3rem;
+	color: #fff;
+	transition: all 300ms ease-in-out;
+}
+
+.carousel-btn:hover > i {
+	color: #ff6060;
+}

@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
-import Error from './components/Error';
-import HomePage from './Pages/HomePage';
-import About from './Pages/About';
+import Error from './screens/Error';
+import HomePage from './screens/HomePage';
+import About from './screens/About';
 import Footer from './components/Footer';
 import GloabalStyle from './style/GloabalStyle';
-import DetailedPage from './Pages/DetailedPage';
+import DetailedPage from './screens/DetailedPage';
+
 
 ReactDOM.render(
 	<React.StrictMode>
