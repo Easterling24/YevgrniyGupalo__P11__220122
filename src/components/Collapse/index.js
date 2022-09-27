@@ -2,6 +2,7 @@ import './index.css';
 import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
 
 export default function Collapse({ title, text, expanded, setExpanded }) {
+
 	const handleExpand = () => {
 		if (expanded) {
 			setExpanded(false);
@@ -46,21 +47,6 @@ export default function Collapse({ title, text, expanded, setExpanded }) {
 					)}
 				</div>
 			)}
-
-			{/* 
-			<div className='collapsed-container'>
-
-				{
-
-					aboutPage ? (<div></div>) : ()
-				}
-
-				
-
-
-
-
-			</div> */}
 		</div>
 	);
 }
