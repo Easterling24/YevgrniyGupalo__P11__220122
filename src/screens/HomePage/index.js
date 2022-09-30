@@ -8,17 +8,18 @@ function HomePage() {
 	return (
 		<section className="home-wrapper">
 			<div className="home-title">
-				<div className="backgorund-title"><h2>Chez vous, partout et ailleurs</h2></div>
+				<div className="backgorund-title">
+					<h2>Chez vous, partout et ailleurs</h2>
+				</div>
 			</div>
 
-				<div className="home-page-wrapper">
-					{dataApartments.logements.map((item) => (
-						<Link className="card-link" key={item.id} to={`/AppartmentDetails/${item.id}`}>
-							<AppartmentCard title={item.title} cover={item.cover} />
-						</Link>
-					))}
-				</div>
-
+			<div className="home-page-wrapper">
+				{dataApartments.logements.map((item) => (
+					<Link className="card-link" key={item.id} to={`/flat-detail/${item.id}`}>
+						<AppartmentCard title={item.title} cover={item.cover} />
+					</Link>
+				))}
+			</div>
 		</section>
 	);
 }

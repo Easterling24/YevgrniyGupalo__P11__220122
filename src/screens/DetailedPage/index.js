@@ -6,6 +6,7 @@ import Rating from '../../components/Rating';
 import Gallery from '../../components/Gallery';
 import ApartmentData from '../../data/logements.json';
 import Collapse from '../../components/Collapse';
+import NotFound from '../NotFound/index';
 import './index.css';
 
 const DetailedHostRating = styled.div`
@@ -44,57 +45,64 @@ function DetailedPage() {
 
 	let appartment = ApartmentData.logements.find((appart) => appart.id === id);
 
+	/**** Checking if the id exists, if undefined , render a notfound component  with ternanry operator ****/
+	let appartmentError = appartment === undefined;
+
 	/***Retreiving data from the api***/
-
-	const flatDescription = appartment.description;
-	const flatEquipment = appartment.equipments;
-
 	const [ expandDescription, setExpandDescription ] = useState(false);
 	const [ expandEquipment, setExpandEquipment ] = useState(false);
 
 	return (
-		<section className="detail-wrapper">
-			{/* Picture Gallery and Navigation */}
+		<section className="main-wrapper">
+			{appartmentError ? (
+				<NotFound />
+			) : (
+				<section className="detail-wrapper">
+					{/* Picture Gallery and Navigation */}
 
-			<Gallery props={appartment} />
+					<Gallery props={appartment} />
 
-			{/* Ttile and Host Data */}
-			<div className="detailed-card-wrapper">
-				<div className="card-tags">
-					<h1>{appartment.title}</h1>
-					<p>{appartment.location}</p>
+					{/* Ttile and Host Data */}
+					<div className="detailed-card-wrapper">
+						<div className="card-tags">
+							<h1>{appartment.title}</h1>
+							<p>{appartment.location}</p>
 
-					<div className="detail-container">{appartment.tags.map((tag) => <p key={tag}>{tag}</p>)}</div>
-				</div>
+							<div className="detail-container">
+								{appartment.tags.map((tag) => <p key={tag}>{tag}</p>)}
+							</div>
+						</div>
 
-				<DetailedHostRating>
-					<HostContainer>
-						<h3>{appartment.host.name}</h3>
-						<HostContainerPicture>
-							<img src={appartment.host.picture} alt={appartment.host.name} />
-						</HostContainerPicture>
-					</HostContainer>
-					<Rating value={appartment.rating} color={'#ff6060'} />
-				</DetailedHostRating>
-			</div>
+						<DetailedHostRating>
+							<HostContainer>
+								<h3>{appartment.host.name}</h3>
+								<HostContainerPicture>
+									<img src={appartment.host.picture} alt={appartment.host.name} />
+								</HostContainerPicture>
+							</HostContainer>
+							<Rating value={appartment.rating} color={'#ff6060'} />
+						</DetailedHostRating>
+					</div>
 
-			<div className="detailed-card-wrapper-lower">
-				{/* First Collapsing Container */}
-				<Collapse
-					title="Description"
-					text={flatDescription}
-					expanded={expandDescription}
-					setExpanded={setExpandDescription}
-				/>
+					<div className="detailed-card-wrapper-lower">
+						{/* First Collapsing Container */}
+						<Collapse
+							title="Description"
+							text={appartment.description}
+							expanded={expandDescription}
+							setExpanded={setExpandDescription}
+						/>
 
-				{/* Second Collapsing Container */}
-				<Collapse
-					title="Equipements"
-					text={flatEquipment}
-					expanded={expandEquipment}
-					setExpanded={setExpandEquipment}
-				/>
-			</div>
+						{/* Second Collapsing Container */}
+						<Collapse
+							title="Equipements"
+							text={appartment.equipments}
+							expanded={expandEquipment}
+							setExpanded={setExpandEquipment}
+						/>
+					</div>
+				</section>
+			)}
 		</section>
 	);
 }
